@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi esempio 1</title>
+</head>
+<body>
+    <a href="#" id="test">test</a>
+    <!-- voglio intercettare l'evento click e scrivo nella console che ho cliccato -->
+    <script>
+        function clickOnTest(event){  //questo parametro event ci serve per storare delle informazioni
+            console.log("Ho cliccaro su test");
+        }
+        let test = document.getElementById("test");         // ottengo l'elemento test   //"test" e "click" sono keyword
+        test.addEventListener("click", clickOnTest);        // associo l'evento click all funzione di callback
+
+        // i due parametri sono (stringa -> tipo di evento che intercetto, funzione di callback che associo) 
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clear interval e clear timeout</title>
+</head>
+<body>
+    <h3>Clear Interval</h3>
+    <p>Faccio un timer che ricalcola l'ora ogni seconfo e aggiunge un bottone per fermarlo</p>
+    <p id="demo"></p> <!-- lo uso per stampare l'orario -->
+    <button onclick="myStop()">Stop al tempo</button>
+    <button onclick="restart()">Riparti</button>
+
+    <script>
+        const myInterval = setInterval(myTimer, 1000);
+
+        function myTimer(){
+            const date = new Date();
+            document.getElementById("demo").innerHTML = date.toLocaleDateString();
+        }
+
+        function myStop(){
+            clearInterval(myInterval);
+        }
+        function restart(){
+            setInterval(myTimer, 1000);
+        }
+    </script>
+    <h3>Clear Timeout</h3>
+    <p>Faccio un bottone che impedisce al timeout di essere eseguito. Avrò un intervallo di tempo (timeout) enttro il quale bloccare l'esecuzione della funzone</p>
+    <p id="demodue"></p>
+    <button onclick="">Stoppa</button>
+    <script>
+        const myTimeout = setTimeout(mygreeting, 3000);
+        function myGreeting(){
+            document.getElementById("demodue").innerHTML = "Ciao!";
+        }
+        function myStopFunction(){
+            clearTimeout(myTimeout);
+        }
+    </script>
+</body>
+</html>
