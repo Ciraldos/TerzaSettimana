@@ -22,7 +22,7 @@ const fillArray = function() {
 const getRandomNum = function (range) {
     // generare un numero random
     const i = Math.floor(Math.random() * range.length)
-    const random = range.splice(i, 1)[0]
+    const random = range.splice(i, 1)
     return random
   }
   
