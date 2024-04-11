@@ -34,7 +34,7 @@ const generateRandNumber = function(range) {
     // Associa la funzione all'evento click del pulsante
     numGeneratorButton.addEventListener("click", function() {
         // Ottieni l'elemento in cui mostrare il numero
-        randomNumberElement.innerText = ranNum;})
+        randomNumberElement.innerText = numRandom;})
     // associare la classe..
 }
 
