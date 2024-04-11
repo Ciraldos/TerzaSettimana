@@ -29,13 +29,11 @@ const getRandomNum = function (range) {
 
 const generateRandNumber = function(range) {
     const numRandom = getRandomNum(range);
-    
+    const numGeneratorButton = document.getElementById("numGenerator");
+    const randomNumberElement = document.getElementById("number");
     // Associa la funzione all'evento click del pulsante
     numGeneratorButton.addEventListener("click", function() {
-        const ranNum = getRandomNum(); // Ottieni un numero casuale
-
-
-        const randomNumberElement = document.getElementById("number"); // Ottieni l'elemento in cui mostrare il numero
+        // Ottieni l'elemento in cui mostrare il numero
         randomNumberElement.innerText = ranNum;})
     // associare la classe..
 }
@@ -44,5 +42,5 @@ const generateUserBoards = function () {
     // genera e gestisce le tabelline
 }
 
-generateRandNumber()
+
 generateMainBoard()
