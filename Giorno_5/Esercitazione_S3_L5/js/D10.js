@@ -62,7 +62,7 @@ console.log(me)
 */
 
 function dice(){
-  return Math.floor(Math.random()*7)
+  return Math.floor(Math.random()*6)+1
 }
 console.log(dice())
 
