@@ -227,9 +227,11 @@ function isTodayMyBirthday(birthDate){
 
 console.log(isTodayMyBirthday("1999-09-20"))
 
+
 // Arrays & Oggetti
 
 // NOTA: l'array "movies" usato in alcuni esercizi è definito alla fine di questo file
+
 
 /* ESERCIZIO 11
   Scrivi una funzione chiamata "deleteProp" che riceve un oggetto e una stringa come parametri; deve ritornare l'oggetto fornito dopo aver eliminato
@@ -484,7 +486,7 @@ console.log(removeIndex(movies, 5))
 function getContainer(){
   document.getElementById("#container")
 }
-getContainer()
+/*getContainer()
 
 /* ESERCIZIO 21
   Scrivi una funzione per selezionare ogni tag <td> all'interno della pagina.
@@ -493,20 +495,20 @@ getContainer()
 function getEveryTag(){
   document.getElementsByTagName("td")
 }
-getEveryTag()
+/*getEveryTag()
 
 /* ESERCIZIO 22
   Scrivi una funzione che, tramite un ciclo, stampa in console il testo contenuto in ogni tag <td> all'interno della pagina.
 */
 
 function printText(){
-  let tags = document.getElementsByTagName("td");
+  let td = document.getElementsByTagName("td");
   for (let i = 0; i < tags.length; i++) {
-    console.log(tags[i].textContent);
+    console.log(td[i].textContent);
   }
 }
 
-printText()
+/*printText()
 
 /* ESERCIZIO 23
   Scrivi una funzione per aggiungere un background di colore rosso a ogni link all'interno della pagina.
@@ -518,7 +520,7 @@ function redBackground() {
     links[i].style.backgroundColor="red"
   }
 }
-redBackground()
+/*redBackground()
 
 /* ESERCIZIO 24
   Scrivi una funzione per aggiungere un nuovo elemento alla lista non ordinata con id "myList".
@@ -531,7 +533,7 @@ function addNewelement(){
   ul.appendChild(li)  
 }
 
-addNewelement()
+/*addNewelement()
 
 
 /* ESERCIZIO 25
@@ -545,7 +547,7 @@ function svuotaLista() {
     li[i].remove()
   }
 }
-svuotaLista()
+/*svuotaLista()
 
 
 
@@ -559,6 +561,7 @@ function addClass(){
     tr[i].classList.add("test")
   }
 }
+/*addClass()
 
 // [EXTRA] JS Avanzato
 
@@ -574,6 +577,17 @@ function addClass(){
 
 */
 
+function halfTree(h) {
+  for (let i = 0; i <= h; i++) {
+    let riga=""
+    for (let j = 1; j <= i; j++) {
+      riga += "*";
+    }
+    console.log(riga);
+  }
+}
+halfTree(3)
+
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
 
@@ -583,10 +597,38 @@ function addClass(){
     *
    ***
   *****
-
 */
+
+function tree(h) {
+  for(let i = 0; i <= h-1; i++){
+    var riga = "";
+    for(let k = 1; k <= h - i; k++){
+      riga += " ";
+    }
+    for(let j = 0; j <= i; j++) {
+        riga += " *"
+    }
+    console.log(riga);
+  }
+}
+tree(3);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
 
+function isItPrime(num){
+  let flag = true;
+  for (let i = 2; i <= num - 1; i++) {
+      if (num % i == 0) {
+          flag = false;
+          break;
+      }
+  }
+  if (flag == true)
+      console.log(num + " è un numero primo");
+  else
+      console.log(num + " non è un numero primo");
+}
+
+isItPrime(17)
