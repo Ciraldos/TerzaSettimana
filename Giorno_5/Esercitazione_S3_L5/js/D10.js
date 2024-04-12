@@ -179,7 +179,6 @@ console.log(whatDayIsIt());
 function rollTheDices(num){
   let valori = []
   let somma = 0
-  let index = 0;
   for(let i=0;i<num;i++){
     valori[i] = dice()
     somma += valori[i]
