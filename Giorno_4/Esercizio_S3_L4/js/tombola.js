@@ -22,25 +22,56 @@ const fillArray = function() {
 const getRandomNum = function (range) {
     // generare un numero random
     const i = Math.floor(Math.random() * range.length)
-    const random = range.splice(i, 1)
+    const random = range.splice(i, 1)[0]
     return random
   }
   
 
 const generateRandNumber = function(range) {
-    const numRandom = getRandomNum(range);
-    const numGeneratorButton = document.getElementById("numGenerator");
-    const randomNumberElement = document.getElementById("number");
-    // Associa la funzione all'evento click del pulsante
-    numGeneratorButton.addEventListener("click", function() {
-        // Ottieni l'elemento in cui mostrare il numero
-        randomNumberElement.innerText = numRandom;})
+    const random = getRandomNum(range)
+    const randNumDiv = document.getElementById('randNum')
+    randNumDiv.innerText = 'Numero: ' + random
+    const cells = document.querySelectorAll('#id .cell')
+    cells[random - 1].classList.add('highlight')
+    const userCells = document.querySelectorAll('.user-board .cell')
+    userCells.forEach((cell) => {
+    if (parseInt(cell.innerText) === random) {
+      cell.classList.add('highlight')
+    }
+  })
+
+    
     // associare la classe..
 }
 
 const generateUserBoards = function () {
-    // genera e gestisce le tabelline
+    const usersNumber = document.getElementById('usersNumber').value
+    const container = document.querySelector('#container')
+    if (parseInt(usersNumber) > 0) {
+      for (let i = 0; i < parseInt(usersNumber); i++) {
+        const range = fillArray()
+        const board = document.createElement('div')
+        board.className = 'board user-board'
+        for (let i = 0; i < 24; i++) {
+          const random = getRandomNum(range)
+          board.innerHTML += `<div class='cell'>${random}</div>`
+        }
+        container.appendChild(board)
+      }
+    }
+  }
+  
+
+window.onload = function() {
+    generateMainBoard()
+    const array = fillArray()
+    const randBtn = document.getElementById('randBtn')
+    randBtn.addEventListener('click', function () {
+        generateRandNumber(array)
+      })
+    const userBoardBtn = document.getElementById('cardsGenerator')
+    userBoardBtn.onclick = generateUserBoards
+    
+    
+
 }
-
-
-generateMainBoard()
