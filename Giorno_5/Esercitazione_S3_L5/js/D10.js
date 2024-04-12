@@ -18,7 +18,7 @@ console.log(sum)
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
-var random = Math.floor(Math.random()*100)
+var random = Math.floor(Math.random()*21)
 console.log(random)
 
 /* ESERCIZIO C
@@ -62,7 +62,7 @@ console.log(me)
 */
 
 function dice(){
-  return Math.floor(Math.random()*6)
+  return Math.floor(Math.random()*7)
 }
 console.log(dice())
 
